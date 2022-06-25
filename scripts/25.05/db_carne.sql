@@ -35,4 +35,26 @@ create table tb_produtos(
     foreign key(idcategoria) references tb_categorias(idcategoria)
 );
 
-insert into tb_categorias(nomecategoria, importadocategoria) values("Bovino")
+insert into tb_categorias(nomecategoria, importadocategoria) values("Bovina", true);
+insert into tb_categorias(nomecategoria, importadocategoria) values("Bovina", false);
+insert into tb_categorias(nomecategoria, importadocategoria) values("Suína", true);
+insert into tb_categorias(nomecategoria, importadocategoria) values("Suína", false);
+insert into tb_categorias(nomecategoria, importadocategoria) values("Aves", true);
+insert into tb_categorias(nomecategoria, importadocategoria) values("Aves", false);
+
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Picanha angus", 109.99, 20, "Kg", 1);
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Contrafilé", 59.99, 30, "Kg", 2);
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Bisteca", 29.99, 10, "Kg", 3);
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Costelinha", 19.99, 10, "Kg", 4);
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Frango inteiro", 30, 20, "Peça", 6);
+insert into tb_produtos(nomeproduto, valorproduto, qtdproduto, medidaqtdproduto, idcategoria) values ("Peito de frango", 19.99, 5, "Kg", 5);
+
+select * from tb_produtos where valorproduto>50;
+
+select * from tb_produtos where valorproduto between 50 and 150;
+
+select * from tb_produtos where nomeproduto like ("%c%");
+
+select * from tb_produtos p inner join tb_categorias c on p.idcategoria=c.idcategoria;
+
+select * from tb_produtos p inner join tb_categorias c on p.idcategoria=c.idcategoria where c.nomecategoria = "Suína";

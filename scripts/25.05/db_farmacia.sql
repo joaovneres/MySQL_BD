@@ -59,7 +59,3 @@ select * from tb_produtos where nomeproduto like ("%c%");
 select * from tb_produtos p inner join tb_categorias c on p.idcategoria=c.idcategoria;
 
 select * from tb_produtos p inner join tb_categorias c on p.idcategoria=c.idcategoria where c.nomecategoria="Bebês";
-
-
-
-
